@@ -1,18 +1,18 @@
 # Site settings
 baseurl = "https://bergerSquare.github.io/"
 themesDir = "./themes"
-languageCode = "en-us"
-title = "Hugo Cactus Theme"
+languageCode = "fr-fr"
+title = "Berger Square"
 theme = "hugo-cactus-theme"
 # Enter your tracking code to enable Google Analytics
-googleAnalytics = ""
+googleAnalytics = "UA-74353320-2"
 # Disable comments by leaving disqusShortname empty
-disqusShortname = "spf13"
+disqusShortname = ""
 
 [params]
-	name = "John Doe"
-	description = "Describe your website"
-	bio = "Blogger & Programmer"
+	name = "Berger Square Team"
+	description = "Blog B Square"
+	bio = "Data Oriented"
 	# Enter optionally your twitter account
 	twitter = "Your Twitter account"
 	enableRSS = true

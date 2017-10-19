@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://bergerSquare.github.io/post/welcome-message/</loc>
+    <lastmod>2017-09-05T05:58:27+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bergerSquare.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bergerSquare.github.io/tags/hugo/</loc>
+    <lastmod>2017-09-05T05:58:27+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bergerSquare.github.io/</loc>
+    <lastmod>2017-09-05T05:58:27+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bergerSquare.github.io/categories/others/</loc>
+    <lastmod>2017-09-05T05:58:27+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bergerSquare.github.io/post/</loc>
+    <lastmod>2017-09-05T05:58:27+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bergerSquare.github.io/tags/small-talk/</loc>
+    <lastmod>2017-09-05T05:58:27+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bergerSquare.github.io/tags/</loc>
+    <lastmod>2017-09-05T05:58:27+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

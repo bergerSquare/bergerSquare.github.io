@@ -7,18 +7,18 @@
   </url>
   
   <url>
+    <loc>https://bergerSquare.github.io/</loc>
+    <lastmod>2017-09-05T05:58:27+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://bergerSquare.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://bergerSquare.github.io/tags/hugo/</loc>
-    <lastmod>2017-09-05T05:58:27+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://bergerSquare.github.io/</loc>
     <lastmod>2017-09-05T05:58:27+01:00</lastmod>
     <priority>0</priority>
   </url>

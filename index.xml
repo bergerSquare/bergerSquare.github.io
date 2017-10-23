@@ -6,19 +6,20 @@
     <description>Recent content on Berger Square</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Tue, 05 Sep 2017 05:58:27 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 20 Oct 2017 05:58:27 +0100</lastBuildDate>
     
 	<atom:link href="https://bergerSquare.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Welcome to my new website</title>
-      <link>https://bergerSquare.github.io/post/welcome-message/</link>
-      <pubDate>Tue, 05 Sep 2017 05:58:27 +0100</pubDate>
+      <title>Methodo Scraping</title>
+      <link>https://bergerSquare.github.io/post/methodo-scraping/</link>
+      <pubDate>Fri, 20 Oct 2017 05:58:27 +0100</pubDate>
       
-      <guid>https://bergerSquare.github.io/post/welcome-message/</guid>
-      <description>Welcome I&amp;rsquo;m very happy to introduce my new website!
-It&amp;rsquo;s a static website that I have done in less than 3 hours with this Hugo tutorial</description>
+      <guid>https://bergerSquare.github.io/post/methodo-scraping/</guid>
+      <description>Ce billet a pour vocation de présenter notre expertise et comment nous pouvons contribuer aux projets et vous aider à mieux identifier les situations .
+Scraping; what you need to know! Le Scraping est une technique d’extraction automatique d’informations sur un ou plusieurs sites web. Le plus généralement il faut développer un script qui charge des page web une à une et récupère le contenu souhaité.
+Usecase  Un exemple de usecase classique est la comparaison de catalogues de produits.</description>
     </item>
     
   </channel>

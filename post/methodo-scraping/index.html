@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+	<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Berger Square Team">
+<meta name="description" content="Blog B Square">
+<meta name="generator" content="Hugo 0.27" />
+<title>Methodo Scraping</title>
+<link rel="shortcut icon" href="https://bergerSquare.github.io/images/favicon.ico">
+<link rel="stylesheet" href="https://bergerSquare.github.io/css/style.css">
+<link rel="stylesheet" href="https://bergerSquare.github.io/css/highlight.css">
+
+
+
+<link rel="stylesheet" href="https://bergerSquare.github.io/css/monosocialiconsfont.css">
+
+
+
+
+<meta property="og:title" content="Methodo Scraping" />
+<meta property="og:description" content="Ce billet a pour vocation de présenter notre expertise et comment nous pouvons contribuer aux projets et vous aider à mieux identifier les situations .
+Scraping; what you need to know! Le Scraping est une technique d’extraction automatique d’informations sur un ou plusieurs sites web. Le plus généralement il faut développer un script qui charge des page web une à une et récupère le contenu souhaité.
+Usecase  Un exemple de usecase classique est la comparaison de catalogues de produits." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bergerSquare.github.io/post/methodo-scraping/" />
+
+
+
+<meta property="article:published_time" content="2017-10-20T05:58:27&#43;01:00"/>
+<meta property="article:modified_time" content="2017-10-20T05:58:27&#43;01:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Methodo Scraping">
+<meta itemprop="description" content="Ce billet a pour vocation de présenter notre expertise et comment nous pouvons contribuer aux projets et vous aider à mieux identifier les situations .
+Scraping; what you need to know! Le Scraping est une technique d’extraction automatique d’informations sur un ou plusieurs sites web. Le plus généralement il faut développer un script qui charge des page web une à une et récupère le contenu souhaité.
+Usecase  Un exemple de usecase classique est la comparaison de catalogues de produits.">
+
+
+<meta itemprop="dateModified" content="2017-10-20T05:58:27&#43;01:00" />
+<meta itemprop="wordCount" content="523">
+
+
+
+<meta itemprop="keywords" content="" />
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Methodo Scraping"/>
+<meta name="twitter:description" content="Ce billet a pour vocation de présenter notre expertise et comment nous pouvons contribuer aux projets et vous aider à mieux identifier les situations .
+Scraping; what you need to know! Le Scraping est une technique d’extraction automatique d’informations sur un ou plusieurs sites web. Le plus généralement il faut développer un script qui charge des page web une à une et récupère le contenu souhaité.
+Usecase  Un exemple de usecase classique est la comparaison de catalogues de produits."/>
+
+
+    </head>
+<body>
+    <nav class="main-nav">
+	
+		<a href='https://bergerSquare.github.io/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+
+	
+</nav>
+
+    <section id="wrapper">
+        
+        
+<article class="post">
+    <header>
+        <h1>Methodo Scraping</h1>
+        <h2 class="subtitle"></h2>
+        <h2 class="headline">
+        October 20, 2017
+        <br>
+        
+        </h2>
+    </header>
+    <section id="post-body">
+        
+
+<p><em>Ce billet a pour vocation de présenter notre expertise et comment nous pouvons contribuer aux projets et vous aider à mieux identifier les situations .</em></p>
+
+<hr />
+
+<h2 id="scraping-what-you-need-to-know">Scraping; what you need to know!</h2>
+
+<p>Le Scraping est une technique d’extraction automatique d’informations sur un ou plusieurs sites web. Le plus généralement il faut développer un script qui charge des page web une à une et récupère le contenu souhaité.</p>
+
+<h2 id="usecase">Usecase</h2>
+
+<blockquote>
+<p>Un exemple de usecase classique est la comparaison de catalogues de produits.</p>
+</blockquote>
+
+<p>En utilisant le site d’asos on peut récupérer un catalogue de lunettes de soleil pour faire un benchmark de ce type de produits.</p>
+
+<p>Notre page de référence est <a href="http://www.asos.fr/homme/lunettes-de-soleil/cat/?cid=6519">http://www.asos.fr/homme/lunettes-de-soleil/cat/?cid=6519</a></p>
+
+<p>On souhaite récupérer :</p>
+
+<ul>
+<li>Le nom</li>
+<li>La marque</li>
+<li>La catégorie (Aviateur, Barre plate, verres transparents …)</li>
+<li>Une référence produit ou ID produit</li>
+<li>Le prix</li>
+<li>La couleur</li>
+<li>Si il y a un motif écaille de tortue</li>
+</ul>
+
+<p>La première étape va être de récupérer la liste des produits par catégorie. Il faut donc faire un premier script qui va charger les pages de chaques catégories.</p>
+
+<p><img src="/images/intro_scraping/lunettes_categ.png" alt="categories de lunettes" /></p>
+
+<p>Ensuite, il se trouve que certaines informations ne sont pas toujours disponibles dans la liste (la couleur par exemple). Mais ces informations sont disponibles sur la page du produit.</p>
+
+<blockquote>
+<p>Il peut y avoir des cas particuliers où le motif écaille se trouve dan le nom et d’autre où il correspond à une couleur.</p>
+</blockquote>
+
+<p><img src="/images/intro_scraping/lunettes_single_page_3.png" alt="product page" /></p>
+
+<p>Un deuxième script consiste donc à parcourir page par page les produit pour récupérer les informations manquantes.</p>
+
+<p>Une fois la data récoltée il suffit de la formater dans un fichier .csv (ou autre).</p>
+
+<p><a href="/static_files/asos_lunettes.csv">Dowload CSV</a> (400+ ref)</p>
+
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>nom</th>
+<th>marque</th>
+<th>categorie</th>
+<th>prix</th>
+<th>couleur</th>
+<th>motif_ecaille</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>8260236</td>
+<td>Lunettes de soleil aviateur avec emblème Medusa sur le côté</td>
+<td>Versace</td>
+<td>aviateur</td>
+<td>267,99 €</td>
+<td>Noir</td>
+<td>FALSE</td>
+</tr>
+
+<tr>
+<td>8260234</td>
+<td>Lunettes de soleil aviateur</td>
+<td>Versace</td>
+<td>aviateur</td>
+<td>279,99 €</td>
+<td>Noir</td>
+<td>FALSE</td>
+</tr>
+
+<tr>
+<td>8166034</td>
+<td>Lunettes de soleil aviateur</td>
+<td>Reclaimed Vintage</td>
+<td>aviateur</td>
+<td>27,99 €</td>
+<td>Doré</td>
+<td>FALSE</td>
+</tr>
+
+<tr>
+<td>8576633</td>
+<td>Lunettes aviateur à verres transparents de forme angulaire</td>
+<td>ASOS</td>
+<td>aviateur</td>
+<td>16,99 €</td>
+<td>Réinitialiser</td>
+<td>FALSE</td>
+</tr>
+
+<tr>
+<td>8126231</td>
+<td>Lunettes de soleil rétro aspect bois</td>
+<td>ASOS</td>
+<td>clubmaster_et_retro</td>
+<td>13,99 €</td>
+<td>Argenté</td>
+<td>FALSE</td>
+</tr>
+
+<tr>
+<td>8126248</td>
+<td>Lunettes de soleil rétro motif écaille de tortue avec détail sur les branches</td>
+<td>ASOS</td>
+<td>clubmaster_et_retro</td>
+<td>13,99 €</td>
+<td>Écaille</td>
+<td>TRUE</td>
+</tr>
+
+<tr>
+<td>8064062</td>
+<td>Lunettes de soleil rétro contrastées noires et écaille de tortue</td>
+<td>ASOS</td>
+<td>clubmaster_et_retro</td>
+<td>13,99 €</td>
+<td>Noir</td>
+<td>TRUE</td>
+</tr>
+
+<tr>
+<td>8424238</td>
+<td>Lunettes de soleil aviateur</td>
+<td>Pull&amp;Bear</td>
+<td>aviateur</td>
+<td>14,99 €</td>
+<td>Doré</td>
+<td>FALSE</td>
+</tr>
+
+<tr>
+<td>8275328</td>
+<td>0RB3561</td>
+<td>Ray-Ban</td>
+<td>aviateur</td>
+<td>177,99 €</td>
+<td>Doré</td>
+<td>FALSE</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="bottlenecks">Bottlenecks</h2>
+
+<ul>
+<li><strong>Scraper peut créer une surcharge de trafic</strong> nuisible pour le site. On évite donc de bombarder le serveur. C’est plus courtois et ça évite de se faire bannir. Donc comptez en moyenne entre 1 et 3 secondes par page.</li>
+<li><strong>Certains sites sont moins bien organisés</strong>. J’ai choisi un exemple simple avec un site bien construit. Mais certains sites sont beaucoup plus difficiles à scraper que d’autres et c’est presque impossible de prévoir cette difficulté avant d’essayer.</li>
+</ul>
+
+<h2 id="en-résumé">En résumé</h2>
+
+<ul>
+<li><strong>N’importe quel texte sur un site peut être scrapé.</strong> Certains sites seront trop durs (voir impossibles) à scrapper mais c’est très rare.</li>
+<li>Il faut comptez en moyenne entre <strong>1h et 3h par script</strong> de scraping en fonction de la difficulté.</li>
+<li>Ensuite comptez entre <strong>1 et 3 secondes d&rsquo;exécution du script par page</strong>.</li>
+</ul>
+
+    </section>
+</article>
+
+<footer id="post-meta" class="clearfix">
+    <a href="https://twitter.com/Your%20Twitter%20account">
+    <img class="avatar" src="https://bergerSquare.github.io/images/avatar.png">
+    <div>
+        <span class="dark">Berger Square Team</span>
+        <span>I&#39;m an blogger.</span>
+    </div>
+    </a>
+    <section id="sharing">
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fbergerSquare.github.io%2fpost%2fmethodo-scraping%2f - Methodo%20Scraping by @Your%20Twitter%20account"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+    </section>
+</footer>
+
+
+
+<ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+
+    
+    
+    
+</ul>
+
+
+
+        <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    
+    <a class="symbol" href="https://www.github.com/">
+        circlegithub
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+        © Copyright 2017 Berger Square Team
+    
+    </p>
+</footer>
+
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://bergerSquare.github.io/js/main.js"></script>
+<script src="https://bergerSquare.github.io/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-74353320-2', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>

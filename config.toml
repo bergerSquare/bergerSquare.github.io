@@ -14,7 +14,7 @@ disqusShortname = ""
 	description = "Blog B Square"
 	bio = "Data Oriented"
 	# Enter optionally your twitter account
-	twitter = "Your Twitter account"
+	# twitter = "Your Twitter account"
 	enableRSS = false
 
 	# Integrate Javascript files or stylesheets by adding the url to the external assets or by

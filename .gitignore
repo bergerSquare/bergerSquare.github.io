@@ -8,6 +8,7 @@ hugo.exe
 *.DS_Store
 .AppleDouble
 .LSOverride
+themes/*
 
 # Icon must end with two \r
 Icon

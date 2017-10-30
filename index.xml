@@ -22,5 +22,17 @@ Scraping; what you need to know! Le Scraping est une technique d’extraction au
 Usecase  Un exemple de usecase classique est la comparaison de catalogues de produits.</description>
     </item>
     
+    <item>
+      <title>Methodo Machine Learning</title>
+      <link>https://bergerSquare.github.io/post/welcome-message/</link>
+      <pubDate>Tue, 05 Sep 2017 05:58:27 +0100</pubDate>
+      
+      <guid>https://bergerSquare.github.io/post/welcome-message/</guid>
+      <description>Ce billet a pour vocation de présenter notre expertise et comment nous pouvons contribuer aux projets et vous aider à mieux identifier les situations .
+Machine Learning; what you need to know! Le Machine Learning (aka. ML) s&amp;rsquo;apparente à de l&amp;rsquo;apprentissage par l&amp;rsquo;exemple a partir de data et appliqué par des algorithmes résultant à une prédiction.
+ Myth Buster:
+Le ML permet de détecter des corrélations et non des causalités.</description>
+    </item>
+    
   </channel>
 </rss>

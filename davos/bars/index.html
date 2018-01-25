@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Davos</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div style="width: 100%;height: 100%">
+		<canvas id="myChart" ></canvas>
+	</div>
+
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+<script type="text/javascript">
+
+	var ctx = document.getElementById("myChart");
+
+	function getRandomInt(max) {
+	  return Math.floor(Math.random() * Math.floor(max));
+	}
+	
+	
+
+	var day = moment();
+
+	var dataRaw = []
+
+	for(let i = 0; i < 72; i++){
+		day.add(1, 'h');
+		var color = "#"+((1<<24)*Math.random()|0).toString(16)
+		var speaker;
+		if(i % 10 == 0){
+			color = "#"+((1<<24)*Math.random()|0).toString(16)
+ 			speaker = "speaker" + i
+		}
+		dataRaw.push({date: day.minute(0).format("YYYY-MM-DD HH:mm"), nbTweets:getRandomInt(50), event: speaker});
+	}
+
+	function getDatasets(data){
+		var events = _.groupBy(dataRaw,'event')
+		var datasets = [];
+		_.forOwn(events, function(val, key){
+			var color = "#"+((1<<24)*Math.random()|0).toString(16)
+			datasets.push({
+				label: key, 
+				data: _.map(val, function(e){ return {t: e.date, y: e.nbTweets} }),
+				backgroundColor: color,
+				borderColor: color,
+				borderWidth: 1
+			})
+		});
+		return datasets;
+	}
+
+	console.log(getDatasets(dataRaw))
+	var myChart = new Chart(ctx, {
+	 	type: 'bar',
+	    data: {
+	        datasets: getDatasets(dataRaw)
+	    },
+    	options: {
+	        scales: {
+		            xAxes: [{
+		                type: 'time',
+		                bound: 'ticks',
+		                time: {
+			                unit: 'hour',
+			                round: 'hour',
+			                distribution: 'series',
+			                parser:"YYYY-MM-DD hh:mm",
+			                // displayFormats: {
+		                 //        hour: 'hA'
+		                 //    }
+		                },
+		                ticks: {
+		                	source: 'data'
+		                }
+
+		            }],
+		        yAxes: [{
+		            ticks: {
+		                beginAtZero: true
+		            }
+		        }]
+		    }
+	    }
+	});
+</script>
+</body>
+</html>

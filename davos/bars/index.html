@@ -18,6 +18,13 @@
 
 	var ctx = document.getElementById("myChart");
 
+	function getColor(index, alpha){
+		var colors = ['rgba(22, 160, 133, '+ alpha + ')', 'rgba(39, 174, 96, '+ alpha + ')', 'rgba(41, 128, 185, '+ alpha + ')', 'rgba(142, 68, 173, '+ alpha + ')', 'rgba(44, 62, 80, '+ alpha + ')', 'rgba(243, 156, 18, '+ alpha + ')', 'rgba(211, 84, 0, '+ alpha + ')', 'rgba(192, 57, 43, '+ alpha + ')', 'rgba(189, 195, 199, '+ alpha + ')']
+
+		return colors[index]
+	}
+
+
 	function getRandomInt(max) {
 	  return Math.floor(Math.random() * Math.floor(max));
 	}
@@ -56,12 +63,12 @@
 	}
 
 	function oneDataset(data){
-		var color;
+		var colorIdx = -1;
 		data = _.map(data, function(e, i){ 
 			if(i % 10 == 0){
-				color = "#"+((1<<24)*Math.random()|0).toString(16)
+				colorIdx += 1
 			}
-			return {t: e.date, y: e.nbTweets, color} 
+			return {t: e.date, y: e.nbTweets, colorIdx} 
 		})
 //		console.log(data)
 		_.map(data, function(e){ 
@@ -73,8 +80,9 @@
 		return [{
 			label: "Tweets by hours& speaker",//_.map(data, function(e){ return  e.date}),
 			data: _.map(data, function(e){ return {t: e.t, y: e.y} }),
-			backgroundColor: _.map(data, function(e){ return e.color }),
-			borderColor: _.map(data, function(e){ return e.color }),
+			backgroundColor: _.map(data, function(e){ return getColor(e.colorIdx, 0.5) }),
+			borderColor: _.map(data, function(e){ return getColor(e.colorIdx, 1.0) }),
+			hoverBackgroundColor: _.map(data, function(e){ return getColor(e.colorIdx, 0.7) })
 		}]
 	}
 

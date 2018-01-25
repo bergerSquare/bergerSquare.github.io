@@ -55,11 +55,36 @@
 		return datasets;
 	}
 
-	console.log(getDatasets(dataRaw))
+	function oneDataset(data){
+		var color;
+		data = _.map(data, function(e, i){ 
+			if(i % 10 == 0){
+				color = "#"+((1<<24)*Math.random()|0).toString(16)
+			}
+			return {t: e.date, y: e.nbTweets, color} 
+		})
+//		console.log(data)
+		_.map(data, function(e){ 
+			console.log(e);
+			return {t: e.date, y: e.nbTweets} 
+		})
+
+
+		return [{
+			label: "Tweets by hours& speaker",//_.map(data, function(e){ return  e.date}),
+			data: _.map(data, function(e){ return {t: e.t, y: e.y} }),
+			backgroundColor: _.map(data, function(e){ return e.color }),
+			borderColor: _.map(data, function(e){ return e.color }),
+		}]
+	}
+
+	//console.log(getDatasets(dataRaw))
+	console.log(oneDataset(dataRaw))
+
 	var myChart = new Chart(ctx, {
 	 	type: 'bar',
 	    data: {
-	        datasets: getDatasets(dataRaw)
+	        datasets: oneDataset(dataRaw)
 	    },
     	options: {
 	        scales: {
@@ -70,7 +95,7 @@
 			                unit: 'hour',
 			                round: 'hour',
 			                distribution: 'series',
-			                parser:"YYYY-MM-DD hh:mm",
+			                parser:"YYYY-MM-DD HH",
 			                // displayFormats: {
 		                 //        hour: 'hA'
 		                 //    }
